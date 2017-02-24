@@ -8,6 +8,7 @@ Commands:
     list / ls    List available registries
   remove / rm    Remove a registry
  use / switch    Switch active registry
+      manager    Switch active package manager command
 
 `);
 }

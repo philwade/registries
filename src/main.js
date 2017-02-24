@@ -9,6 +9,7 @@ import initCmd from './cmd/init';
 import listCmd from './cmd/list';
 import removeCmd from './cmd/remove';
 import switchCmd from './cmd/switch';
+import managerCmd from './cmd/manager';
 
 const COMMAND_MAP = {
 		add: addCmd,
@@ -20,7 +21,8 @@ const COMMAND_MAP = {
 		rm: removeCmd,
 		remove: removeCmd,
 		use: switchCmd,
-		switch: switchCmd
+		switch: switchCmd,
+		manager: managerCmd
 	},
 	argv = yargs.argv,
 	plainArgs = argv._,

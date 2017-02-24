@@ -28,7 +28,8 @@ export default function({ force = true }) {
 					default: {
 						[OFFICIAL_NAME]: OFFICIAL_REGISTRY
 					},
-					custom: {}
+					custom: {},
+					manager: OFFICIAL_NAME
 				})
 					.tap(() => logInfo('initialized registries config\n'));
 			});

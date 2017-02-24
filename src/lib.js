@@ -14,8 +14,12 @@ export function saveConfigFile(data) {
 	return Promise.fromCallback(cb => jsonFile.writeFile(`${ process.env.HOME }/.registries.npm.json`, data, { spaces: 2 }, cb));
 }
 
+export function getCurrentManager() {
+	return getConfigFile().then(config => config.manager);
+}
+
 export function getCurrentRegistry() {
-	return Promise.fromCallback(cb => childProcess.exec('npm get registry', cb));
+	return getCurrentManager().then(manager => Promise.fromCallback(cb => childProcess.exec(`${ manager } get registry`, cb)));
 }
 
 export function setRegistry(registryUrl) {
